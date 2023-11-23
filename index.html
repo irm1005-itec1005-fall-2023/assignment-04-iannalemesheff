@@ -3,7 +3,7 @@
 
 <head>
   <!-- Set the page title -->
-  <title>Assignment 04 - Finishing a Todo List App</title>
+  <title>Macinto-do</title>
 
   <!-- Set the charset we're using to UTF-8 -->
   <meta charset="utf-8" />
@@ -21,9 +21,53 @@
   <link rel="stylesheet" href="./style.css" />
 
   <!-- Set the Favicon  -->
-  <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" />
+  <link rel="icon" href="./images/favicon/apple-logo-in-chicago-font.png" type="image/x-icon" />
 </head>
+
+<!--
+  CITATIONS
+
+An illustration which I believe was created using MacPaint. Nonetheless, it captures the style perfectly:
+* The Ruins of Apple® Civilization
+From “Zen & the Art of the Macintosh: Discoveries on the Path to Computer Enlightenment” by Michael Green (1986)
+* https://flic.kr/p/gjzjio
+
+A helpful tutorial I used to guide me through this process. I used it as a foundation and made my own changes.
+* https://youtu.be/G0jO8kUrg-I?si=4rH7eN27IrFs7BTR
+
+A bitmap icon of Apple's logo created by Steve Lovelace.
+* https://steve-lovelace.com/tech-logos-in-chicago-font/
+
+Stock checkbox icons.
+* https://www.iconfinder.com/icons/37514/checkbox_no_icon
+* https://www.iconfinder.com/icons/37515/checkbox_gui_no_yes_icon
+
+Chicago font download.
+* https://www.1001freefonts.com/chicago.font
+-->
+
 <body>
+  <main>
+    <div class="container">
+      <div class="todo-app">
+        <h2><img src="./images/myImages/apple-logo-in-chicago-font.png"/> To-Do List</h2>
+        <small>You can't connect the dots looking forward; you can only connect them looking backwards.</small>
+        <div class="row">
+          <input type="text" id="input-box" placeholder="put a ding in the universe...">
+          <button id="add-button" onclick="addTask()">Add</button>
+        </div>
+        <ul id="list-container">
+          <!-- <li class="checked">Task 1</li>
+          <li>Task 2</li>
+          <li>Task 3</li> -->
+        </ul>
+      </div>
+    </div>
+  </main>
+  <!-- Add JavaScript File -->
+  <script src="./script.js"></script>
+</body>
+</html>
 
   <!--
 
@@ -39,13 +83,3 @@
     - Have you conducted a code review and left a GitHub Issue on your team member's repo?
 
   -->
-
-  <main>
-    <div id="app"></div>
-  </main>
-
-  <!-- Add JavaScript File -->
-  <script src="./script.js"></script>
-
-</body>
-</html>
