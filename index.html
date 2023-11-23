@@ -27,12 +27,12 @@
 <!--
   CITATIONS
 
-An illustration which I believe was created using MacPaint. Nonetheless, it captures the style perfectly:
+An illustration which I believe was created using MacPaint. Nonetheless, it captures the style perfectly.
 * The Ruins of Apple® Civilization
 From “Zen & the Art of the Macintosh: Discoveries on the Path to Computer Enlightenment” by Michael Green (1986)
 * https://flic.kr/p/gjzjio
 
-A helpful tutorial I used to guide me through this process. I used it as a foundation and made my own changes.
+A helpful tutorial to guide me through this process. I used it as a foundation and made my own changes.
 * https://youtu.be/G0jO8kUrg-I?si=4rH7eN27IrFs7BTR
 
 A bitmap icon of Apple's logo created by Steve Lovelace.
@@ -49,7 +49,9 @@ Chicago font download.
 <body>
   <main>
     <div class="container">
-      <div class="todo-app">
+      <button id="click-here" onclick="displayBox()">Click Here</button>
+
+      <div id="black-box" class="todo-app" style="display: none;">
         <h2><img src="./images/myImages/apple-logo-in-chicago-font.png" alt="Bitmap Apple logo."/> To-Do List</h2>
         <small>You can't connect the dots looking forward; you can only connect them looking backwards.</small>
         <div class="row">

@@ -1,6 +1,14 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 
+
+function displayBox() {
+  let displayBlackBox = document.getElementById("black-box");
+  let hideButton = document.getElementById("click-here");
+  displayBlackBox.style.display = 'block';
+  hideButton.style.display = 'none';
+}
+
 function addTask(){
   if(inputBox.value === ''){
     alert("scary virus pop up");
