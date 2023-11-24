@@ -16,6 +16,7 @@ body {
   width:100%;
   padding: 10px;
 }
+
 .todo-app {
   width: 100%;
   max-width:540px;
@@ -59,7 +60,9 @@ button {
   color:white;
   font-size: 16px;
   cursor: pointer;
+  width:fit-content;
 }
+
 ul li {
   list-style:none;
   font-size:0.9rem;
@@ -99,6 +102,21 @@ ul li button {
 }
 ul li button:hover {
   color:white;
+}
+
+audio {
+  margin-left:10px;
+  margin-top:10px;
+  border-style:inset;
+  background-color:#ebebeb;
+}
+audio::-webkit-media-controls-panel {
+  background-color: #ebebeb; /* Customize background color for WebKit browsers (Chrome, Safari) */
+}
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  font-family: 'Chicago';
+  src: url(./font/ChicagoFLF.ttf);
 }
 
 /****** Screen reader text utility clsas *******/
