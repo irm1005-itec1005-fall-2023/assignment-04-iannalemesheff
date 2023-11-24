@@ -10,16 +10,19 @@ function displayBox() {
 }
 
 function addTask(){
-  if(inputBox.value === ''){
+  if(inputBox.value.trim() === ''){
     alert("scary virus pop up");
   }
   else{
     let li = document.createElement("li");
     li.innerHTML = inputBox.value;
     listContainer.appendChild(li);
-    let span = document.createElement("span");
-    span.innerHTML = "\u00d7";
-    li.appendChild(span);
+    let button = document.createElement("button");
+    button.innerHTML = "\u00d7";
+    button.addEventListener("click", function() {
+      removeTask(li);
+    })
+    li.appendChild(button);
   }
   inputBox.value = "";
   saveData();
@@ -30,7 +33,7 @@ listContainer.addEventListener("click", function(e) {
     e.target.classList.toggle("checked");
     saveData();
   }
-  else if(e.target.tagName === "SPAN") {
+  else if(e.target.tagName === "BUTTON") {
     e.target.parentElement.remove();
     saveData();
   }

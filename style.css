@@ -25,7 +25,7 @@ body {
   border-style: inset;
 
 }
-.todo-app h2 {
+.todo-app h1 {
   color:rgb(255, 255, 255);
   display: flex;
   align-items: center;
@@ -33,7 +33,7 @@ body {
   font-size:1.1rem;
   letter-spacing: 1px;
 }
-.todo-app h2 img {
+.todo-app h1 img {
   width:30px;
   margin-left:10px;
 }
@@ -86,16 +86,18 @@ ul li.checked {
 ul li.checked::before {
   background-image: url(images/myImages/37515_checkbox_gui_no_yes_icon.png);
 }
-ul li span {
+ul li button {
+  border:none;
   position:absolute;
   right: 0;
   width: 30px;
   height: 30px;
   font-size: 0.8rem;
   color: #555;
+  background-color:transparent;
   text-align: center;
 }
-ul li span:hover {
+ul li button:hover {
   color:white;
 }
 
