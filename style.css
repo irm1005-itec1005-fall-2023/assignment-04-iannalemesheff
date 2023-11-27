@@ -25,6 +25,7 @@ body {
   padding: 30px 30px 25px;
   border-style: inset;
   border-width:7px;
+  word-wrap:break-word;
 
 }
 .todo-app h1 {
