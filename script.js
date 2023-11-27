@@ -1,43 +1,54 @@
-/* Assignment 04: Finishing a Todo List App
- *
- * 
- *
- */
+const inputBox = document.getElementById("input-box");
+const listContainer = document.getElementById("list-container");
 
 
-//
-// Variables
-//
-
-// Constants
-const appID = "app";
-const headingText = "To do. To done. ✅";
-
-// DOM Elements
-let appContainer = document.getElementById(appID);
-
-//
-// Functions
-//
-
-// Add a heading to the app container
-function inititialise() {
-  // If anything is wrong with the app container then end
-  if (!appContainer) {
-    console.error("Error: Could not find app contianer");
-    return;
-  }
-
-  // Create an h1 and add it to our app
-  const h1 = document.createElement("h1");
-  h1.innerText = headingText;
-  appContainer.appendChild(h1);
-
-  // Init complete
-  console.log("App successfully initialised");
+function displayBox() {
+  let displayBlackBox = document.getElementById("black-box");
+  let hideButton = document.getElementById("click-here");
+  displayBlackBox.style.display = 'block';
+  hideButton.style.display = 'none';
 }
 
-//
-// Inits & Event Listeners
-//
-inititialise();
+function addTask(){
+  if(inputBox.value.trim() === ''){
+    alert("scary virus pop up");
+  }
+  else{
+    let li = document.createElement("li");
+    li.innerHTML = inputBox.value;
+    listContainer.appendChild(li);
+    let button = document.createElement("button");
+    button.innerHTML = "\u00d7";
+    button.addEventListener("click", function() {
+      removeTask(li);
+    })
+    li.appendChild(button);
+  }
+  inputBox.value = "";
+  saveData();
+}
+
+listContainer.addEventListener("click", function(e) {
+  if(e.target.tagName === "LI") {
+    e.target.classList.toggle("checked");
+    saveData();
+  }
+  else if(e.target.tagName === "BUTTON") {
+    e.target.parentElement.remove();
+    saveData();
+  }
+}, false);
+
+inputBox.addEventListener("keypress", function(event){
+  if (event.key === "Enter") {
+    document.getElementById("add-button").click();
+  }
+});
+
+function saveData(){
+  localStorage.setItem("data", listContainer.innerHTML);
+}
+function showTask(){
+  listContainer.innerHTML = localStorage.getItem("data");
+}
+showTask();
